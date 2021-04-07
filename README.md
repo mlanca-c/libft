@@ -41,9 +41,7 @@
 # Tests
  These are the tests I used in my project. I advise you to use all of them, since they test different thing and tend to complement each other.
 
- [Tripouille/libftTester](https://github.com/Tripouille/libftTester)
-
- [jtoty/Libftest](https://github.com/jtoty/Libftest)
-
- [alelievr/libft-unit-test](https://github.com/alelievr/libft-unit-test)
+ * [Tripouille/libftTester](https://github.com/Tripouille/libftTester)
+ * [jtoty/Libftest](https://github.com/jtoty/Libftest)
+ * [alelievr/libft-unit-test](https://github.com/alelievr/libft-unit-test)
 
