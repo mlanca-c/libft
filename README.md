@@ -5,7 +5,6 @@
 # Contents
  1. [Intro](https://github.com/mlanca-c/libft/blob/main/README.md#intro)
 	* [Keywords](https://github.com/mlanca-c/libft/blob/main/README.md#Keywords)
- 2. [Mandatory](https://github.com/mlanca-c/libft/blob/main/README.md#Mandatory)
  3. [Bonus](https://github.com/mlanca-c/libft/blob/main/README.md#Bonus)
 	* [Singly Linked List](https://github.com/mlanca-c/libft/blob/main/README.md#singly-linked-list)
  4. [Results](https://github.com/mlanca-c/libft/blob/main/README.md#Results)
@@ -17,11 +16,18 @@
  This library will help you for all your future C projects.
 
 ## Keywords
- > [libft](https://velog.io/@bahn/Libft-%EC%B4%9D-%EC%A0%95%EB%A6%AC), [Makefile](https://makefiletutorial.com/), [norm](https://github.com/42School/norminette/blob/master/pdf/en.norm.pdf), [C Library](https://devdocs.io/c/)
-
-# Mandatory
+ > [libft](https://velog.io/@bahn/Libft-%EC%B4%9D-%EC%A0%95%EB%A6%AC), [Makefile](https://makefiletutorial.com/), [norm](https://github.com/42School/norminette/blob/master/pdf/en.norm.pdf), [C Library](https://devdocs.io/c/), [Linked List](https://www.geeksforgeeks.org/data-structures/linked-list/singly-linked-list/)
 
 # Bonus
+ ```
+ typedef struct		s_list
+ {
+ 	void			*content;
+ 	struct s_list	*next;
+ }					t_list;
+ ```
+ |content	|data contained in the element. The void * allows to store any kind of data|
+ |next		|next element’s address or NULL if it’s the last element|
 
 ## Singly Linked List
 
