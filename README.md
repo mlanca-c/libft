@@ -26,6 +26,7 @@
  	struct s_list	*next;
  }					t_list;
  ```
+ |:--------:|:--------------:|
  |content	|data contained in the element. The void * allows to store any kind of data|
  |next		|next element’s address or NULL if it’s the last element|
 
