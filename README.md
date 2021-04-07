@@ -26,11 +26,21 @@
  	struct s_list	*next;
  }					t_list;
  ```
- |:--------:|:--------------:|
- |content	|data contained in the element. The void * allows to store any kind of data|
- |next		|next element’s address or NULL if it’s the last element|
+ * content: data contained in the element. The void * allows to store any kind of data.
+ * next: next element’s address or NULL if it’s the last element.
 
 ## Singly Linked List
+ Linked List is a linear data structure. Unlike arrays, linked list elements are not stored at a contiguous location; the elements are linked using pointers.
+ ![linkedlistimage](https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2013/03/Linkedlist.png)
+ 
+ A linked list is represented by a pointer to the first node of the linked list. The first node is called the head. If the linked list is empty, then the value of the head is NULL.
+ 
+ Each node in a list consists of at least two parts:
+  1) data
+  2) Pointer (Or Reference) to the next node
+ In C, we can represent a node using structures. Below is an example of a linked list node with integer data.
+
+ In Java or C#, LinkedList can be represented as a class and a Node as a separate class. The LinkedList class contains a reference of Node class type.
 
 # Results
   1st try: [results](results/1st_try) (100%)
