@@ -19,16 +19,6 @@
  > [libft](https://velog.io/@bahn/Libft-%EC%B4%9D-%EC%A0%95%EB%A6%AC), [Makefile](https://makefiletutorial.com/), [norm](https://github.com/42School/norminette/blob/master/pdf/en.norm.pdf), [C Library](https://devdocs.io/c/), [Linked List](https://www.geeksforgeeks.org/data-structures/linked-list/singly-linked-list/)
 
 # Bonus
- ```
- typedef struct		s_list
- {
- 	void			*content;
- 	struct s_list	*next;
- }					t_list;
- ```
- * content: data contained in the element. The void * allows to store any kind of data.
- * next: next element’s address or NULL if it’s the last element.
-
 ## Singly Linked List
  Linked List is a linear data structure. Unlike arrays, linked list elements are not stored at a contiguous location; the elements are linked using pointers.
 
@@ -41,8 +31,15 @@
   2) Pointer (Or Reference) to the next node.
 
  In C, we can represent a node using structures. Below is an example of a linked list node with integer data.
-
- In Java or C#, LinkedList can be represented as a class and a Node as a separate class. The LinkedList class contains a reference of Node class type.
+ ```
+ typedef struct		s_list
+ {
+ 	void			*content;
+ 	struct s_list	*next;
+ }					t_list;
+ ```
+ * content: data contained in the element. The void * allows to store any kind of data.
+ * next: next element’s address or NULL if it’s the last element.
 
 # Results
   1st try: [results](results/1st_try) (100%)
