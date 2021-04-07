@@ -7,15 +7,13 @@
 	* [Keywords](https://github.com/mlanca-c/libft/blob/main/README.md#Keywords)
  2. [Mandatory](https://github.com/mlanca-c/libft/blob/main/README.md#Mandatory)
  3. [Bonus](https://github.com/mlanca-c/libft/blob/main/README.md#Bonus)
-	* [Singly Linked List](https://github.com/mlanca-c/libft/blob/main/README.md#Singly-Linked-Lists)
+	* [Singly Linked List](https://github.com/mlanca-c/libft/blob/main/README.md#singly-linked-list)
  4. [Results](https://github.com/mlanca-c/libft/blob/main/README.md#Results)
  5. [Tests](https://github.com/mlanca-c/libft/blob/main/README.md#Tests)
 
 # Intro
  This is the very first project of the 42 cursus.
-
  The aim is to code a C library regrouping usual functions that you’ll be allowed to use in all your other projects.
-
  This library will help you for all your future C projects.
 
 ## Keywords
@@ -25,7 +23,7 @@
 
 # Bonus
 
-## Singly Linked Listy
+## Singly Linked List
 
 # Results
   1st try: [results](results/1st_try) (100%)
