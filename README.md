@@ -3,9 +3,9 @@
 
 > [subject](subject.pdf)
 # Contents
-1. [Intro]()
-	* [Keywords]()
-2. [Results]()
+1. [Intro](https://github.com/mlanca-c/libft/blob/main/README.md#intro)
+	* [Keywords](https://github.com/mlanca-c/libft/blob/main/README.md#Keywords)
+2. [Results](https://github.com/mlanca-c/libft/blob/main/README.md#Results)
 
 # Intro
 The aim of this project is to code a C library regrouping usual functions that you’ll be allowed to use in all your other projects.
