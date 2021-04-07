@@ -5,10 +5,10 @@
 # Contents
  1. [Intro](https://github.com/mlanca-c/libft/blob/main/README.md#intro)
 	* [Keywords](https://github.com/mlanca-c/libft/blob/main/README.md#Keywords)
- 3. [Bonus](https://github.com/mlanca-c/libft/blob/main/README.md#Bonus)
+ 2. [Bonus](https://github.com/mlanca-c/libft/blob/main/README.md#Bonus)
 	* [Singly Linked List](https://github.com/mlanca-c/libft/blob/main/README.md#singly-linked-list)
- 4. [Results](https://github.com/mlanca-c/libft/blob/main/README.md#Results)
- 5. [Tests](https://github.com/mlanca-c/libft/blob/main/README.md#Tests)
+ 3. [Results](https://github.com/mlanca-c/libft/blob/main/README.md#Results)
+ 4. [Tests](https://github.com/mlanca-c/libft/blob/main/README.md#Tests)
 
 # Intro
  This is the very first project of the 42 cursus.
