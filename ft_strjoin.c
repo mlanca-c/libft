@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 17:32:00 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/02/18 17:31:11 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/03/28 13:30:08 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	i = ft_strlen(s1) + ft_strlen(s2) + 1;
-	if (!(tab = (char *)malloc(i * sizeof(char))))
+	i = ft_strlen(s1) + ft_strlen(s2);
+	tab = (char *)malloc(sizeof(char) * (i + 1));
+	if (!tab)
 		return (NULL);
 	i = 0;
 	while (s1[i])

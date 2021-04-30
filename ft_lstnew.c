@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 17:45:36 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/02/22 11:34:13 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/03/28 15:41:37 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*lst;
 
-	if (!(lst = (t_list *)malloc(sizeof(t_list) * 1)))
+	lst = (t_list *)malloc(sizeof(t_list) * 1);
+	if (!lst)
 		return (NULL);
 	lst->content = content;
 	lst->next = NULL;
