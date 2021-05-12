@@ -6,7 +6,7 @@
 #    By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/08 10:52:56 by mlanca-c          #+#    #+#              #
-#    Updated: 2021/05/12 23:56:28 by mlanca-c         ###   ########.fr        #
+#    Updated: 2021/05/13 00:08:17 by mlanca-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,12 +45,13 @@ SRCS	=		ft_memset.c \
       			ft_putstr_fd.c \
       			ft_putendl_fd.c \
       			ft_putnbr_fd.c \
-				ft_abs_bonus.c \
-				ft_is_even_bonus.c \
-				ft_power_bonus.c \
-				ft_is_negative_bonus.c \
-				ft_sort_in_tab_bonus.c \
-				ft_strncat_bonus.c
+				ft_abs.c \
+				ft_is_even.c \
+				ft_power.c \
+				ft_is_negative.c \
+				ft_sort_in_tab.c \
+				ft_strncat.c \
+				ft_atoi_base.c
 OBJS	=		$(SRCS:.c=.o)
 SRCSB	=		ft_lstnew.c \
        			ft_lstadd_front.c \
