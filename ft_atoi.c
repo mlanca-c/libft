@@ -6,12 +6,22 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 18:07:37 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/03/27 22:05:07 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/12 17:30:41 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+ * This function converts a ASCII string to an integer.
+ * The atoi() function converts the initial portion of the string pointed to
+ * by str to int representation.
+ *
+ * @param	const char	*str	- string to be converted to int.
+ *
+ * @return
+ * 		- The ft_atoi() function returns the int representation of the string.
+*/
 int	ft_atoi(const char *str)
 {
 	int				i;
