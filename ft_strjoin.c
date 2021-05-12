@@ -6,12 +6,24 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 17:32:00 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/03/28 13:30:08 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/12 20:57:32 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+** This function joins two strings together.
+** The ft_strjoin() alocates (with malloc(3)) and returns a new string, which
+** is the result of the concatenation of ’s1’ and ’s2’.
+**
+** @param	const char	*s1		- prefix string.
+** @param	const char	*s2		- suffix string.
+**
+** @returns
+** 		- The ft_strjoin() function returns the new string, or null if the
+** 		allocation fails.
+*/
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;

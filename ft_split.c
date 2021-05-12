@@ -6,12 +6,22 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 17:33:10 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/03/28 14:02:53 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/12 21:57:31 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+** This function frees a double pointer string.
+** The free_error() function frees the given char **str. In this case it frees
+** the double pointer string from ft_split(), once an allocation error occurs.
+**
+** @param	char	**str	- double pointer to be freed.
+**
+** @return
+** 		- The free_error() function returns null.
+*/
 static char	**free_error(char **str)
 {
 	size_t	i;
@@ -26,6 +36,19 @@ static char	**free_error(char **str)
 	return (NULL);
 }
 
+/*
+** This function creates an array.
+** The get_pointer_len() function takes the given string 's' in ft_split, and
+** counts the number of valid char c occurencies that s has, therefore getting
+** the correct length of the double pointer string to be returned by ft_split.
+**
+** @param	const char	*s	- string to be split.
+** @param	char		c	- delimiter character.
+**
+** @return
+** 		- The get_dpointer_len() function returns the number of occurrences of
+** 		'c' in 's'.
+*/
 static size_t	get_dpointer_len(char const *s, char c)
 {
 	size_t	i;
@@ -52,6 +75,17 @@ static size_t	get_dpointer_len(char const *s, char c)
 	return (count);
 }
 
+/*
+** This function creates an array.
+** The create_arr() function creates an array from 's', until it finds a 'c'
+** occurrence.
+**
+** @param	const char	*s		- string to be split.
+** @param	char		c		- delimiter character.
+** @param	size_t		ct		- the length of valid occurrences of 'c' in 's'.
+** @param	char		**str	- the double pointer string to be returned from
+** 								ft_split().
+*/
 static void	create_arr(char const *s, char c, size_t ct, char **ptr)
 {
 	size_t	len;
@@ -80,6 +114,19 @@ static void	create_arr(char const *s, char c, size_t ct, char **ptr)
 	}
 }
 
+/*
+** This function splits a string.
+** The ft_split() function allocates (with malloc(3)) and returns an array of
+** strings obtained by splitting ’s’ using the character ’c’ as a delimiter. The
+** array must be ended by a null pointer.
+**
+** @param	const char	*s	- string to be split.
+** @param	char		c	- delimiter character.
+**
+** @return
+** 		- The ft_split() function returns the array of new strings resulting
+** 		from the split, or null if the allocation fails.
+*/
 char	**ft_split(char const *s, char c)
 {
 	char	**dpointer;

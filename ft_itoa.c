@@ -6,12 +6,22 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 17:33:36 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/03/28 15:45:39 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/12 22:03:22 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+** This function gets the number of digits of an integer.
+** The get_len() function returns the number of digits of an integer - the
+** length that the string - that represents the integer - will need to have.
+**
+** @param	int	n	- integer to convert in ft_itoa().
+**
+** @return
+** 		- The number of digits of 'n'.
+*/
 int	get_len(int n)
 {
 	int		l;
@@ -32,6 +42,18 @@ int	get_len(int n)
 	return (l);
 }
 
+/*
+** This function converts an integer to a numeric string.
+** The ft_itoa() function allocates (with malloc()) and returns a string
+** representing the integer received as an argument. Negative numbers must be
+** handled.
+**
+** @param	int	n	- integer to convert.
+**
+** @return
+** 		- The ft_itoa() function returns the string representing the integer, or
+** 		null if the allocation fails.
+*/
 char	*ft_itoa(int n)
 {
 	char	*s;
