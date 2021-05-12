@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 10:52:45 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/04/30 15:21:40 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/12 18:31:34 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,29 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+/*
+** BONUS:
+** This structure represents the elements of the single-list.
+**
+** void	*content		- data contained in the element. The void * allows to
+** 						store any kind of data.
+** struct s_list *next	- next element’s address or NULL if it’s the last
+** 						element.
+*/
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
 
-void	*ft_memset(void *s, int c, size_t n);
+/*
+** Part 1 Functions
+*/
+void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
-void	*ft_memmove(void *dest, const void *src, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
+void	*ft_memmove(void *dst, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t	ft_strlen(const char *s);
@@ -45,6 +57,11 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 char	*ft_strdup(const char *s);
+
+/*
+** Part 2 Functions
+*/
+
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
@@ -56,6 +73,11 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+/*
+** Bonus Functions
+*/
+
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
