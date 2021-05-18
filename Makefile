@@ -5,13 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/02/08 10:52:56 by mlanca-c          #+#    #+#              #
-#    Updated: 2021/05/13 00:08:17 by mlanca-c         ###   ########.fr        #
+#    Created: 2021/05/18 12:21:33 by mlanca-c          #+#    #+#              #
+#    Updated: 2021/05/18 12:25:26 by mlanca-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+# File Name Variables
 NAME	=		libft.a
-SRCS	=		ft_memset.c \
+SRC		=		ft_memset.c \
       			ft_bzero.c \
       			ft_memcpy.c \
       			ft_memccpy.c \
@@ -50,41 +51,66 @@ SRCS	=		ft_memset.c \
 				ft_power.c \
 				ft_is_negative.c \
 				ft_sort_in_tab.c \
-				ft_strncat.c \
-				ft_atoi_base.c
-OBJS	=		$(SRCS:.c=.o)
-SRCSB	=		ft_lstnew.c \
-       			ft_lstadd_front.c \
-       			ft_lstsize.c \
-       			ft_lstlast.c \
-       			ft_lstadd_back.c \
-       			ft_lstdelone.c \
-       			ft_lstclear.c \
-       			ft_lstiter.c \
-       			ft_lstmap.c
-OBJSB	=	$(SRCSB:.c=.o)
-INCS		= 	-I .
-CC			=	gcc
-CFLAGS		=	-Wall -Wextra -Werror
-CLIB		=	ar -rc
-RM			=	rm -f
+				ft_strncat.c
+OBJ		=		$(SRC:.c=.o)
+LIST	=		list/ft_lstnew.c \
+       			list/ft_lstadd_front.c \
+       			list/ft_lstsize.c \
+       			list/ft_lstlast.c \
+       			list/ft_lstadd_back.c \
+       			list/ft_lstdelone.c \
+       			list/ft_lstclear.c \
+       			list/ft_lstiter.c \
+       			list/ft_lstmap.c
+LIST_O	=		$(LIST:.c=.o)
+INC		= 		-I. -Ilist
+
+# Compiling Variables
+CC		=	gcc
+CFLAG	=	-Wall -Wextra -Werror
+CLIB	=	ar -rc
+RM		=	rm -f
+
+# Debugger
+ifeq ($(DEBUG), 1)
+	D_FLAG	=	-g
+endif
+
+# Fsanitize
+ifeq ($(SANITIZE), 1)
+	D_FLAG	=	-fsanitize=address -g
+endif
+
+# Colors
+GREEN		=	\e[38;5;40m
+YELLOW		=	\e[38;5;226m
+RESET		=	\e[0m
+_SUCCESS	=	[$(GREEN)SUCCESS$(RESET)]
+_INFO		=	[$(YELLOW)INFO$(RESET)]
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) $(INCS)
+	$(CC) $(CFLAG) $(D_FLAG) -c $< -o $(<:.c=.o) $(INC)
 
 all: $(NAME)
 
-$(NAME): $(OBJS) 
-	$(CLIB) $(NAME) $(OBJS) 
+$(NAME): $(OBJ) 
+	@printf "$(_INFO) Creating object files...\n"
+	@printf "$(_INFO) Compiling libft...\n"
+	$(CLIB) $(NAME) $(OBJ) 
+	@printf "$(_SUCCESS) Compilation complete.\n"
 
-bonus: $(NAME) $(OBJSB)
-	$(CLIB) $(NAME) $(OBJSB)
+list: $(LIST_O)
+	@printf "$(_INFO) Compiling list...\n"
+	$(CLIB) $(NAME) $(LIST_O)
+	@printf "$(_SUCCESS) Compilation complete.\n"
 
 clean:
-	$(RM) $(OBJS) $(OBJSB) 
+	$(RM) $(OBJ) $(LIST_O)
+	@printf "$(_SUCCESS) Cleaned all object files\n"
 
 fclean: clean
 	$(RM) $(NAME)
+	@printf "$(_SUCCESS) Cleaned libft.a\n"
 
 re: fclean all
 
