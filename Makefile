@@ -6,11 +6,11 @@
 #    By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 12:21:33 by mlanca-c          #+#    #+#              #
-#    Updated: 2021/05/18 19:03:09 by mlanca-c         ###   ########.fr        #
+#    Updated: 2021/05/18 19:15:57 by mlanca-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# File Name Variables
+	# File Name Variables #
 NAME	=		libft.a
 SRC		=		ft_memset.c \
       			ft_bzero.c \
@@ -75,23 +75,23 @@ STACK	=		stack/ft_stack_new.c \
 STACK_O	=		$(STACK:.c=.o)
 INC		= 		-I. -Istack
 
-# Compiling Variables
+	# Compiling Variables #
 CC		=	gcc
 CFLAG	=	-Wall -Wextra -Werror
 CLIB	=	ar -rc
 RM		=	rm -f
 
-# Debugger
+	# Debugger #
 ifeq ($(DEBUG), 1)
 	D_FLAG	=	-g
 endif
 
-# Fsanitize
+	# Fsanitize #
 ifeq ($(SANITIZE), 1)
 	D_FLAG	=	-fsanitize=address -g
 endif
 
-# Colors
+	# Colors #
 GREEN		=	\e[38;5;118m
 YELLOW		=	\e[38;5;226m
 RESET		=	\e[0m
@@ -104,28 +104,30 @@ _INFO		=	[$(YELLOW)INFO$(RESET)]
 all: $(NAME)
 
 $(NAME): $(OBJ) 
-	@printf "$(_INFO) Creating object files...\n"
-	@printf "$(_INFO) Compiling libft...\n"
+	@printf "$(_SUCCESS) Created object files in ./libft ...\n"
+	@printf "$(_INFO) Compiling ./libft ...\n"
 	$(CLIB) $(NAME) $(OBJ) 
 	@printf "$(_SUCCESS) Compilation complete.\n"
 
 bonus: $(LIST_O)
-	@printf "$(_INFO) Compiling list...\n"
+	@printf "$(_SUCCESS) Created object files in ./libft ...\n"
+	@printf "$(_INFO) Compiling list in ./libft ...\n"
 	$(CLIB) $(NAME) $(LIST_O)
 	@printf "$(_SUCCESS) Compilation complete.\n"
 
 stack: $(STACK_O)
-	@printf "$(_INFO) Compiling stack...\n"
+	@printf "$(_SUCCESS) Created object files in ./libft ...\n"
+	@printf "$(_INFO) Compiling stack in ./libft ...\n"
 	$(CLIB) $(NAME) $(STACK_O)
 	@printf "$(_SUCCESS) Compilation complete.\n"
 
 clean:
 	$(RM) $(OBJ) $(LIST_O) $(STACK_O)
-	@printf "$(_SUCCESS) Cleaned all object files\n"
+	@printf "$(_SUCCESS) Cleaned all object files in ./libft.\n"
 
 fclean: clean
 	$(RM) $(NAME)
-	@printf "$(_SUCCESS) Cleaned libft.a\n"
+	@printf "$(_SUCCESS) Cleaned libft.a in ./libft.\n"
 
 re: fclean all
 
