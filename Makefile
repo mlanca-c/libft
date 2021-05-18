@@ -6,7 +6,7 @@
 #    By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 12:21:33 by mlanca-c          #+#    #+#              #
-#    Updated: 2021/05/18 12:25:26 by mlanca-c         ###   ########.fr        #
+#    Updated: 2021/05/18 18:19:52 by mlanca-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,17 +53,27 @@ SRC		=		ft_memset.c \
 				ft_sort_in_tab.c \
 				ft_strncat.c
 OBJ		=		$(SRC:.c=.o)
-LIST	=		list/ft_lstnew.c \
-       			list/ft_lstadd_front.c \
-       			list/ft_lstsize.c \
-       			list/ft_lstlast.c \
-       			list/ft_lstadd_back.c \
-       			list/ft_lstdelone.c \
-       			list/ft_lstclear.c \
-       			list/ft_lstiter.c \
-       			list/ft_lstmap.c
+LIST	=		ft_lstnew.c \
+       			ft_lstadd_front.c \
+       			ft_lstsize.c \
+       			ft_lstlast.c \
+       			ft_lstadd_back.c \
+       			ft_lstdelone.c \
+       			ft_lstclear.c \
+       			ft_lstiter.c \
+       			ft_lstmap.c
 LIST_O	=		$(LIST:.c=.o)
-INC		= 		-I. -Ilist
+STACK	=		stack/ft_stack_new.c \
+				stack/ft_stack_add_front.c \
+				stack/ft_stack_add_back.c \
+				stack/ft_stack_size.c \
+				stack/ft_stack_last.c \
+				stack/ft_stack_first.c \
+				stack/ft_stack_remove.c \
+				stack/ft_stack_print.c \
+				stack/ft_stack_clear.c
+STACK_O	=		$(STACK:.c=.o)
+INC		= 		-I. -Istack
 
 # Compiling Variables
 CC		=	gcc
@@ -99,13 +109,18 @@ $(NAME): $(OBJ)
 	$(CLIB) $(NAME) $(OBJ) 
 	@printf "$(_SUCCESS) Compilation complete.\n"
 
-list: $(LIST_O)
+bonus: $(LIST_O)
 	@printf "$(_INFO) Compiling list...\n"
 	$(CLIB) $(NAME) $(LIST_O)
 	@printf "$(_SUCCESS) Compilation complete.\n"
 
+stack: $(STACK_O)
+	@printf "$(_INFO) Compiling stack...\n"
+	$(CLIB) $(NAME) $(STACK_O)
+	@printf "$(_SUCCESS) Compilation complete.\n"
+
 clean:
-	$(RM) $(OBJ) $(LIST_O)
+	$(RM) $(OBJ) $(LIST_O) $(STACK_O)
 	@printf "$(_SUCCESS) Cleaned all object files\n"
 
 fclean: clean
