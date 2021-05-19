@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 17:24:00 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/18 17:32:28 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/19 20:01:05 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ void	ft_stack_print(t_stack *stack)
 	while (temporary)
 	{
 		ft_putnbr_fd(temporary->data, 1);
-		ft_putchar_fd('\n', 1);
+		if (temporary->next)
+			ft_putstr_fd(", ", 1);
+		else
+			ft_putstr_fd("\n", 1);
 		temporary = temporary->next;
 	}
 }
