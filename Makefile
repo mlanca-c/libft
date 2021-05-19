@@ -6,7 +6,7 @@
 #    By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 12:21:33 by mlanca-c          #+#    #+#              #
-#    Updated: 2021/05/19 13:28:50 by mlanca-c         ###   ########.fr        #
+#    Updated: 2021/05/19 17:07:11 by mlanca-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,8 @@ SRC		=		ft_memset.c \
 				ft_atoi_base.c \
 				ft_swap.c \
 				ft_str_isalpha.c \
-				ft_str_toupper.c
+				ft_str_toupper.c \
+				ft_isint.c
 OBJ		=		$(SRC:.c=.o)
 LIST	=		ft_lstnew.c \
        			ft_lstadd_front.c \
@@ -80,7 +81,9 @@ STACK	=		stack/ft_stack_new.c \
 				stack/ft_stack_first.c \
 				stack/ft_stack_remove.c \
 				stack/ft_stack_print.c \
-				stack/ft_stack_clear.c
+				stack/ft_stack_clear.c \
+				stack/ft_stack_is_duplicate.c \
+				stack/ft_stack_is_sorted.c
 STACK_O	=		$(STACK:.c=.o)
 INC		= 		-I. -Istack
 
@@ -124,7 +127,7 @@ bonus: $(LIST_O)
 	$(CLIB) $(NAME) $(LIST_O)
 	@printf "$(_SUCCESS) Compilation complete.\n"
 
-stack: $(STACK_O)
+stack: clean $(STACK_O)
 	@printf "$(_SUCCESS) Created object files in ./libft ...\n"
 	@printf "$(_INFO) Compiling stack in ./libft ...\n"
 	$(CLIB) $(NAME) $(STACK_O)
