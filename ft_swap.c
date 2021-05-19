@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:46:33 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/19 10:53:42 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/19 13:23:12 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 ** @param	int	*a
 ** @param	int	*b
 */
-void	ft_swap(int *a int *b)
+void	ft_swap(int *a, int *b)
 {
 	int	temporary;
 
