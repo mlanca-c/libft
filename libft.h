@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 10:52:45 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/19 13:28:27 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/19 16:06:22 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char		*ft_strchr(const char *s, int c);
 char		*ft_strrchr(const char *s, int c);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
-int			ft_atoi(const char *str);
+long long	ft_atoi(const char *str);
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_isalnum(int c);
@@ -107,5 +107,6 @@ char		*ft_itoa_base(unsigned long long int n, char *base);
 int			ft_atoi_base(char *str, char *base);
 void		ft_swap(int *a, int *b);
 void		ft_str_toupper(char *str);
+int			ft_isint(long long int n);
 
 #endif
