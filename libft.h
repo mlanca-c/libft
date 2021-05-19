@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 10:52:45 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/19 13:22:58 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/19 13:28:27 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,5 +106,6 @@ int			ft_nbrlen(unsigned long long int number, int base);
 char		*ft_itoa_base(unsigned long long int n, char *base);
 int			ft_atoi_base(char *str, char *base);
 void		ft_swap(int *a, int *b);
+void		ft_str_toupper(char *str);
 
 #endif
