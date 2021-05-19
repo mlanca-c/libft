@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-# include "stack.h"
+# include "ft_stack.h"
 
 /*
 ** BONUS:
