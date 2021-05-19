@@ -6,11 +6,12 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 18:07:37 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/19 10:15:51 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/19 16:07:25 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 /*
 ** This function converts a ASCII string to an integer.
@@ -22,7 +23,7 @@
 ** @return
 ** 		- The ft_atoi() function returns the int representation of the string.
 */
-int	ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
 	int				i;
 	int				negative;
@@ -39,12 +40,6 @@ int	ft_atoi(const char *str)
 	}
 	number = 0;
 	while (ft_isdigit(str[i]))
-	{
 		number = (number * 10) + (negative * (str[i++] - '0'));
-		if (number > 2147483648)
-			return (-1);
-		if (number < -2147483648)
-			return (0);
-	}
 	return (number);
 }
