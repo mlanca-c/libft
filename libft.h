@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 10:52:45 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/18 20:02:12 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/19 10:49:56 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,12 @@ long long	ft_power(long long n, long long times);
 int			ft_is_negative(int n);
 void		ft_sort_in_tab(int *tab, int size);
 char		*ft_strncat(char *dst, char *src, unsigned int n);
-int			ft_str_isdigit(char *str);
+int			ft_str_isnumeric(char *str);
+int			ft_base_check(char *base);
+int			ft_isspace(int c);
+int			ft_nbrlen(unsigned long long int number, int base);
+char		*ft_itoa_base(unsigned long long int n, char *base);
+int			ft_atoi_base(char *str, char *base);
+void		ft_swap(int *a int *b);
 
 #endif
