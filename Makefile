@@ -6,7 +6,7 @@
 #    By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 12:21:33 by mlanca-c          #+#    #+#              #
-#    Updated: 2021/05/18 20:02:35 by mlanca-c         ###   ########.fr        #
+#    Updated: 2021/05/19 10:48:45 by mlanca-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,13 @@ SRC		=		ft_memset.c \
 				ft_is_negative.c \
 				ft_sort_in_tab.c \
 				ft_strncat.c \
-				ft_str_isdigit.c
+				ft_str_isnumeric.c \
+				ft_base_check.c \
+				ft_isspace.c \
+				ft_nbrlen.c \
+				ft_itoa_base.c \
+				ft_atoi_base.c \
+				ft_swap.c
 OBJ		=		$(SRC:.c=.o)
 LIST	=		ft_lstnew.c \
        			ft_lstadd_front.c \
