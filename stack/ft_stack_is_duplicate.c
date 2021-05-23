@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_has_duplicate.c                           :+:      :+:    :+:   */
+/*   ft_stack_is_duplicate.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 16:30:46 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/23 21:07:02 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/19 16:39:50 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,14 @@
 ** 		- The ft_stack_is_duplicate() function returns 1 if the value of 'data'
 ** 		already exists in the 'stack'; or it returns 0 if it doesn't exist.
 */
-int	ft_stack_is_duplicate(t_stack *stack)
+int	ft_stack_is_duplicate(t_stack *stack, int data)
 {
-	t_stack	*cur_node;
-
 	if (!stack)
 		return (1);
 	while (stack)
 	{
-		cur_node = stack->next;
-		while (cur_node)
-		{
-			if (stack->data == cur_node->data)
-				return (1);
-			cur_node = cur_node->next;
-		}
+		if (stack->data == data)
+			return (1);
 		stack = stack->next;
 	}
 	return (0);
