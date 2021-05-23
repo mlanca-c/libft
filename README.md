@@ -14,4 +14,8 @@
 
  This program creates a library libft.a
 
- To compile this librarie simply type ```make``` on the directory of the project.
+ ```
+ git clone git@github.com:mlanca-c/libft.git
+ cd libft
+ make
+ ```
