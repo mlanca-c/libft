@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.h                                            :+:      :+:    :+:   */
+/*   ft_stack.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/18 17:59:22 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/18 18:15:28 by mlanca-c         ###   ########.fr       */
+/*   Created: 2021/05/20 11:32:20 by mlanca-c          #+#    #+#             */
+/*   Updated: 2021/05/20 11:32:45 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STACK_H
-# define STACK_H
+#ifndef FT_STACK_H
+# define FT_STACK_H
 
 typedef struct s_stack
 {
@@ -29,5 +29,9 @@ t_stack	*ft_stack_first(t_stack *stack);
 void	ft_stack_remove(t_stack **stack);
 void	ft_stack_print(t_stack *stack);
 void	ft_stack_clear(t_stack **stack);
+int		ft_stack_is_duplicate(t_stack *stack, int data);
+int		ft_stack_is_sorted(t_stack *stack);
+int		ft_stack_max_value(t_stack *stack_a);
+int		ft_stack_min_value(t_stack *stack_a);
 
 #endif

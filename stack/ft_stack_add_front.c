@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 16:15:34 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/18 18:32:07 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/21 16:23:30 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ void	ft_stack_add_front(t_stack **stack, t_stack *new)
 {
 	t_stack	*temporary;
 
-	if (!stack || !new)
-		return ;
 	temporary = *stack;
-	new->next = temporary;
-	temporary->previous = new;
+	if (temporary)
+	{
+		new->next = temporary;
+		temporary->previous = new;
+	}
 	*stack = new;
 }
