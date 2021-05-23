@@ -6,32 +6,35 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 16:30:46 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/19 16:39:50 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/23 22:34:29 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** This function checks if 'data' already exists in the stack.
-** The ft_stack_is_duplicate() function iterates the stack and checks if 'data'
-** already exists.
+** This function checks if 'stack' has any duplicated integers
+** The ft_stack_is_duplicate() function iterates the stack and checks if any
+** integer is duplicated.
 **
 ** @param	t_stack	*stack	- stack to iterate from.
-** @param	int		data	- data to check if value exists.
 **
 ** @return
-** 		- The ft_stack_is_duplicate() function returns 1 if the value of 'data'
-** 		already exists in the 'stack'; or it returns 0 if it doesn't exist.
+** 		- The ft_stack_is_duplicate() function returns 1 if it contains
+**		duplicate integers; or it returns 0 if it doesn't.
 */
-int	ft_stack_is_duplicate(t_stack *stack, int data)
+int	ft_stack_is_duplicate(t_stack *stack)
 {
-	if (!stack)
-		return (1);
+	t_stack	*temporary;
 	while (stack)
 	{
-		if (stack->data == data)
-			return (1);
+		temporary = stack->next;
+		while (temporary)
+		{
+			if (stack->data == temporary->data)
+				return (1);
+			temporary = temporary->next;
+		}
 		stack = stack->next;
 	}
 	return (0);
