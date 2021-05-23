@@ -6,7 +6,7 @@
 #    By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 12:21:33 by mlanca-c          #+#    #+#              #
-#    Updated: 2021/05/23 20:10:56 by mlanca-c         ###   ########.fr        #
+#    Updated: 2021/05/23 20:30:52 by mlanca-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,21 +101,25 @@ $(NAME): m $(OBJ)
 	@printf "$(_SUCCESS) Compilation complete.\n"
 
 list: bonus
-bonus: b $(LIST_O)
+bonus: b clean_no_info $(LIST_O)
 	@printf "$(_SUCCESS) Created object files in ./libft/linked_list ...\n"
 	@ $(CLIB) $(NAME) $(LIST_O)
 	@printf "$(_SUCCESS) Compilation complete.\n"
 
-stack: s $(STACK_O)
+stack: s clean_no_info $(STACK_O)
 	@printf "$(_SUCCESS) Created object files in ./libft/stack ...\n"
 	@ $(CLIB) $(NAME) $(STACK_O)
 	@printf "$(_SUCCESS) Compilation complete.\n"
 
-get_next_line: g $(GNL_O)
+get_next_line: g clean_no_info $(GNL_O)
 	@printf "$(_SUCCESS) Created object files in ./libft/get_next_line ...\n"
 	@ $(CLIB) $(NAME) $(GNL_O)
 	@printf "$(_SUCCESS) Compilation complete.\n"
 gnl: get_next_line
+
+clean_no_info:
+	@ $(RM) $(OBJ) $(LIST_O) $(STACK_O) $(GNL_O)
+	@ $(RM) $(NAME)
 
 clean:
 	@ $(RM) $(OBJ) $(LIST_O) $(STACK_O) $(GNL_O)
