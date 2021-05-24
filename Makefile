@@ -6,7 +6,7 @@
 #    By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 12:21:33 by mlanca-c          #+#    #+#              #
-#    Updated: 2021/05/23 23:28:09 by mlanca-c         ###   ########.fr        #
+#    Updated: 2021/05/24 17:48:35 by mlanca-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -104,17 +104,14 @@ $(NAME): m $(OBJ)
 
 list: bonus
 bonus: b clean_no_info $(LIST_O)
-	@printf "$(_SUCCESS) Created object files in ./libft/linked_list ...\n"
 	@ $(CLIB) $(NAME) $(LIST_O)
 	@printf "$(_SUCCESS) Compilation complete.\n"
 
 stack: s clean_no_info $(STACK_O)
-	@printf "$(_SUCCESS) Created object files in ./libft/stack ...\n"
 	@ $(CLIB) $(NAME) $(STACK_O)
 	@printf "$(_SUCCESS) Compilation complete.\n"
 
 get_next_line: g clean_no_info $(GNL_O)
-	@printf "$(_SUCCESS) Created object files in ./libft/get_next_line ...\n"
 	@ $(CLIB) $(NAME) $(GNL_O)
 	@printf "$(_SUCCESS) Compilation complete.\n"
 gnl: get_next_line
@@ -125,11 +122,11 @@ clean_no_info:
 
 clean:
 	@ $(RM) $(OBJ) $(LIST_O) $(STACK_O) $(GNL_O)
-	@printf "$(_SUCCESS) Cleaned all object files in ./libft.\n"
+	@printf "$(_INFO) Cleaned all object files in ./libft.\n"
 
 fclean: clean
 	@ $(RM) $(NAME)
-	@printf "$(_SUCCESS) Cleaned libft.a in ./libft.\n"
+	@printf "$(_INFO) Cleaned libft.a in ./libft.\n"
 
 re: fclean all
 
