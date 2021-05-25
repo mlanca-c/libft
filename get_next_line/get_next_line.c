@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 15:43:04 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/23 20:09:34 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/25 17:26:24 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,7 +169,7 @@ int	get_next_line(int fd, char **line)
 			return (-1);
 		}
 		buf[reader] = '\0';
-		saved[fd] = ft_strjoin(saved[fd], buf);
+		saved[fd] = ft_strjoin_helper(saved[fd], buf);
 	}
 	free(buf);
 	*line = get_until_newline(saved[fd]);

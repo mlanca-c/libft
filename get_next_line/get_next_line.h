@@ -6,12 +6,14 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 15:43:24 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/04/29 17:45:20 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/25 17:26:53 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+
+# include "libft.h"
 
 /* 
  * If for some reason the code get_next_line is not compile with the 
@@ -33,7 +35,6 @@
 # include <stdlib.h>
 
 int		get_next_line(int fd, char **line);
-char	*ft_strjoin(char *s1, char *s2);
-int		ft_strlen(char *str);
+char	*ft_strjoin_helper(char *s1, char *s2);
 
 #endif
