@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 13:03:19 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/12 22:42:08 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/25 18:02:59 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,10 @@
 ** @param	void (*del)(void*)	- address of the function used to delete the
 ** 								content of the content.
 */
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst)
 {
-	t_list	*temp;
-
-	if (!lst || !del)
+	if (!lst)
 		return ;
 	while (*lst)
-	{
-		temp = (*lst)->next;
-		(*del)((*lst)->content);
-		free(*lst);
-		*lst = temp;
-	}
+		ft_lstremove(lst);
 }
