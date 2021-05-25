@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstremove.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/25 12:10:34 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/25 12:10:39 by mlanca-c         ###   ########.fr       */
+/*   Created: 2021/02/15 19:37:30 by mlanca-c          #+#    #+#             */
+/*   Updated: 2021/05/25 18:12:46 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 /*
 ** The ft_lstdelone() function takes as a parameter an element and frees the
@@ -21,10 +22,15 @@
 ** @param	void (*del)(void *)	- the address of the function used to delete the
 ** 								content.
 */
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstremove(t_list **lst)
 {
-	if (!lst || !del)
+	t_list	*temporary;
+
+	if (!lst)
 		return ;
-	(*del)(lst->content);
-	free(lst);
+	temporary = *lst;
+	*lst = temporary->next;
+	temporary->next = NULL;
+	temporary = NULL;
+	free(temporary);
 }

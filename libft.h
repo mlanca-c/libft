@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 10:52:45 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/19 16:06:22 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/25 17:40:11 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,16 +79,17 @@ void		ft_putnbr_fd(int n, int fd);
 /*
 ** Single List Functions (Bonus)
 */
-
 t_list		*ft_lstnew(void *content);
 void		ft_lstadd_front(t_list **lst, t_list *new);
 int			ft_lstsize(t_list *lst);
 t_list		*ft_lstlast(t_list *lst);
 void		ft_lstadd_back(t_list **lst, t_list *new);
-void		ft_lstdelone(t_list *lst, void (*del)(void*));
-void		ft_lstclear(t_list **lst, void (*del)(void*));
+void		ft_lstremove(t_list **lst);
+void		ft_lstdelone(t_list *lst, void (*del)(void *));
+void		ft_lstclear(t_list **lst);
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+void		ft_lstprint(t_list *lst);
 
 /*
 ** Bonus Functions
@@ -108,5 +109,6 @@ int			ft_atoi_base(char *str, char *base);
 void		ft_swap(int *a, int *b);
 void		ft_str_toupper(char *str);
 int			ft_isint(long long int n);
+int			ft_strcmp(char *s1, char *s2);
 
 #endif
