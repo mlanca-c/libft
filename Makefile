@@ -6,7 +6,7 @@
 #    By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 12:21:33 by mlanca-c          #+#    #+#              #
-#    Updated: 2021/05/23 20:30:52 by mlanca-c         ###   ########.fr        #
+#    Updated: 2021/05/24 17:48:35 by mlanca-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRC			=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 				ft_is_negative.c ft_sort_in_tab.c ft_strncat.c \
 				ft_str_isnumeric.c ft_base_check.c ft_isspace.c ft_nbrlen.c \
 				ft_itoa_base.c ft_atoi_base.c ft_swap.c ft_str_isalpha.c \
-				ft_str_toupper.c \
+				ft_str_toupper.c ft_isint.c \
 				$(STACK) $(GNL) $(LIST)
 OBJ			=	$(SRC:.c=.o)
 
@@ -45,7 +45,9 @@ STACK		=	stack/ft_stack_new.c stack/ft_stack_add_front.c \
 				stack/ft_stack_add_back.c stack/ft_stack_size.c \
 				stack/ft_stack_last.c stack/ft_stack_first.c \
 				stack/ft_stack_remove.c stack/ft_stack_print.c \
-				stack/ft_stack_clear.c
+				stack/ft_stack_clear.c stack/ft_stack_is_sorted.c \
+				stack/ft_stack_max_value.c stack/ft_stack_min_value.c \
+				stack/ft_stack_is_duplicate.c
 STACK_O		=	$(STACK:.c=.o)
 
 	# get_next_line Variables #
@@ -102,17 +104,14 @@ $(NAME): m $(OBJ)
 
 list: bonus
 bonus: b clean_no_info $(LIST_O)
-	@printf "$(_SUCCESS) Created object files in ./libft/linked_list ...\n"
 	@ $(CLIB) $(NAME) $(LIST_O)
 	@printf "$(_SUCCESS) Compilation complete.\n"
 
 stack: s clean_no_info $(STACK_O)
-	@printf "$(_SUCCESS) Created object files in ./libft/stack ...\n"
 	@ $(CLIB) $(NAME) $(STACK_O)
 	@printf "$(_SUCCESS) Compilation complete.\n"
 
 get_next_line: g clean_no_info $(GNL_O)
-	@printf "$(_SUCCESS) Created object files in ./libft/get_next_line ...\n"
 	@ $(CLIB) $(NAME) $(GNL_O)
 	@printf "$(_SUCCESS) Compilation complete.\n"
 gnl: get_next_line
@@ -123,11 +122,11 @@ clean_no_info:
 
 clean:
 	@ $(RM) $(OBJ) $(LIST_O) $(STACK_O) $(GNL_O)
-	@printf "$(_SUCCESS) Cleaned all object files in ./libft.\n"
+	@printf "$(_INFO) Cleaned all object files in ./libft.\n"
 
 fclean: clean
 	@ $(RM) $(NAME)
-	@printf "$(_SUCCESS) Cleaned libft.a in ./libft.\n"
+	@printf "$(_INFO) Cleaned libft.a in ./libft.\n"
 
 re: fclean all
 
