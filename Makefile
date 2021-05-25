@@ -6,7 +6,7 @@
 #    By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 12:21:33 by mlanca-c          #+#    #+#              #
-#    Updated: 2021/05/24 17:48:35 by mlanca-c         ###   ########.fr        #
+#    Updated: 2021/05/25 17:40:31 by mlanca-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRC			=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 				ft_is_negative.c ft_sort_in_tab.c ft_strncat.c \
 				ft_str_isnumeric.c ft_base_check.c ft_isspace.c ft_nbrlen.c \
 				ft_itoa_base.c ft_atoi_base.c ft_swap.c ft_str_isalpha.c \
-				ft_str_toupper.c ft_isint.c \
+				ft_str_toupper.c ft_isint.c ft_strcmp.c \
 				$(STACK) $(GNL) $(LIST)
 OBJ			=	$(SRC:.c=.o)
 
@@ -36,7 +36,8 @@ LIST		=	linked_list/ft_lstnew.c linked_list/ft_lstadd_front.c \
 				linked_list/ft_lstsize.c linked_list/ft_lstlast.c \
 				linked_list/ft_lstadd_back.c linked_list/ft_lstdelone.c \
 				linked_list/ft_lstclear.c linked_list/ft_lstiter.c \
-				linked_list/ft_lstmap.c
+				linked_list/ft_lstmap.c linked_list/ft_lstprint.c \
+				linked_list/ft_lstremove.c
 LIST_O		=	$(LIST:.c=.o)
 
 	# stack Variables #
