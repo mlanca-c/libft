@@ -6,7 +6,7 @@
 #    By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 12:21:33 by mlanca-c          #+#    #+#              #
-#    Updated: 2021/05/24 17:48:35 by mlanca-c         ###   ########.fr        #
+#    Updated: 2021/05/25 23:53:01 by mlanca-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ STACK		=	stack/ft_stack_new.c stack/ft_stack_add_front.c \
 				stack/ft_stack_remove.c stack/ft_stack_print.c \
 				stack/ft_stack_clear.c stack/ft_stack_is_sorted.c \
 				stack/ft_stack_max_value.c stack/ft_stack_min_value.c \
-				stack/ft_stack_is_duplicate.c
+				stack/ft_stack_is_duplicate.c stack/ft_stack_sort.c
 STACK_O		=	$(STACK:.c=.o)
 
 	# get_next_line Variables #
