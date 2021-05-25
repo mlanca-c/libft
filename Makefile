@@ -6,7 +6,7 @@
 #    By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 12:21:33 by mlanca-c          #+#    #+#              #
-#    Updated: 2021/05/25 17:40:31 by mlanca-c         ###   ########.fr        #
+#    Updated: 2021/05/25 19:03:03 by mlanca-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -123,11 +123,12 @@ clean_no_info:
 
 clean:
 	@ $(RM) $(OBJ) $(LIST_O) $(STACK_O) $(GNL_O)
-	@printf "$(_INFO) Cleaned all object files in ./libft.\n"
+	@printf "$(_INFO) Cleaned all object files\n"
 
-fclean: clean
+fclean:
+	@ $(RM) $(OBJ) $(LIST_O) $(STACK_O) $(GNL_O)
 	@ $(RM) $(NAME)
-	@printf "$(_INFO) Cleaned libft.a in ./libft.\n"
+	@printf "$(_INFO) Cleaned all object files an libft.a\n"
 
 re: fclean all
 
