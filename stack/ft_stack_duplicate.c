@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 15:08:03 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/26 15:12:22 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/26 15:24:43 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ t_stack	*ft_stack_duplicate(t_stack *stack)
 		new_node = ft_stack_new(stack->data);
 		if (!new_node)
 		{
-			ft_stack_clear(duplicate);
-			return (NULL);
+			ft_stack_clear(&duplicate);
+			return (0);
 		}
-		ft_stack_add_back(duplicate, new_node);
+		ft_stack_add_back(&duplicate, new_node);
 		stack = stack->next;
 	}
 	return (duplicate);
