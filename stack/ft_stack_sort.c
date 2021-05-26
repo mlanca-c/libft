@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 22:13:10 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/26 00:26:40 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/26 15:51:41 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_stack_sort(t_stack **stack)
 	ft_stack_split(head, &stack_a, &stack_b);
 	ft_stack_sort(&stack_a);
 	ft_stack_sort(&stack_b);
-	head = ft_merge_sort(stack_a, stack_b);
+	*stack = ft_merge_sort(stack_a, stack_b);
 }
 
 /*
@@ -109,14 +109,13 @@ void	ft_stack_split(t_stack *head, t_stack **stack_a, t_stack **stack_b)
 	while (fast)
 	{
 		fast = fast->next;
-		if (fast->next)
+		if (fast)
 		{
 			slow = slow->next;
 			fast = fast->next;
 		}
 	}
 	*stack_a = head;
-	*stack_b = slow;
+	*stack_b = slow->next;
 	slow->next = 0;
-	head->previous = 0;
 }
