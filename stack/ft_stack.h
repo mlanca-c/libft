@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 15:16:19 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/26 15:19:08 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/26 16:19:24 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ typedef struct s_stack
 	struct s_stack	*previous;
 }	t_stack;
 
+/*
+** Functions of ./stack
+*/
 t_stack	*ft_stack_new(int data);
 void	ft_stack_add_front(t_stack **stack, t_stack *new);
 void	ft_stack_add_back(t_stack **stack, t_stack *new);
@@ -34,6 +37,7 @@ int		ft_stack_is_sorted(t_stack *stack);
 int		ft_stack_max_value(t_stack *stack_a);
 int		ft_stack_min_value(t_stack *stack_a);
 t_stack	*ft_stack_duplicate(t_stack *stack);
+int		ft_stack_get(t_stack *stack, int position);
 /*
 ** ft_stack_sort.c Functions
 */
