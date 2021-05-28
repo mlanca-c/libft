@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 15:16:19 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/26 16:51:40 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/05/28 12:28:21 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int		ft_stack_min_value(t_stack *stack_a);
 t_stack	*ft_stack_duplicate(t_stack *stack);
 int		ft_stack_get(t_stack *stack, int position);
 int		ft_stack_median(t_stack *stack);
+int		ft_stack_has_above(t_stack *stack, int value);
 /*
 ** ft_stack_sort.c Functions
 */
