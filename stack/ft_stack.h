@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 15:16:19 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/28 12:28:21 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/06/01 12:09:24 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		ft_stack_has_above(t_stack *stack, int value);
 ** ft_stack_sort.c Functions
 */
 void	ft_stack_sort(t_stack **stack);
-t_stack	*ft_merge_sort(t_stack *stack_a, t_stack *stack_b);
-void	ft_stack_split(t_stack *head, t_stack **stack_a, t_stack **stack_b);
+t_stack	*ft_merge_sort(t_stack *first, t_stack *second);
+t_stack	*ft_stack_split(t_stack	*head);
 
 #endif
