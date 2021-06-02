@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 15:16:19 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/06/01 15:01:34 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/06/02 14:05:09 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int		ft_stack_max_value(t_stack *stack_a);
 int		ft_stack_min_value(t_stack *stack_a);
 t_stack	*ft_stack_duplicate(t_stack *stack);
 int		ft_stack_get(t_stack *stack, int position);
+int		ft_stack_find(t_stack *stack, int value);
 int		ft_stack_median(t_stack *stack);
 int		ft_stack_has_bigger(t_stack *stack, int value);
 /*
