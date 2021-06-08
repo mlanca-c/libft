@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_has_above.c                               :+:      :+:    :+:   */
+/*   ft_stack_has_bigger.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 12:24:29 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/06/01 15:00:45 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/06/08 17:34:24 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_stack_has_bigger(t_stack *stack, int value)
 {
 	while (stack)
 	{
-		if (stack->data >= value)
+		if (stack->data > value)
 			return (1);
 		stack = stack->next;
 	}
