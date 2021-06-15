@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 16:30:46 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/27 15:26:40 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/06/15 15:38:59 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int	ft_stack_is_duplicate(t_stack *stack)
 
 	sorted = ft_stack_duplicate(stack);
 	ft_stack_sort(&sorted);
-	while (sorted)
+	while (sorted->next)
 	{
-		if (sorted == sorted->next)
+		if (sorted->data == sorted->next->data)
 			return (1);
 		sorted = sorted->next;
 	}
