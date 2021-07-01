@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 10:52:45 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/25 17:40:11 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/07/01 19:34:42 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <stdlib.h>
 
 # include "ft_stack.h"
+
+# define ANSI_COLOR_RED		"\x1b[31m"
+# define ANSI_COLOR_BLUE	"\x1b[34m"
+# define ANSI_COLOR_GREEN	"\x1b[32m"
+# define ANSI_COLOR_YELLOW	"\x1b[33m"
+# define ANSI_COLOR_RESET	"\x1b[0m"
 
 /*
 ** BONUS:
@@ -110,5 +116,7 @@ void		ft_swap(int *a, int *b);
 void		ft_str_toupper(char *str);
 int			ft_isint(long long int n);
 int			ft_strcmp(char *s1, char *s2);
+void		ft_putstr_color_fd(char *color, char *s, int fd);
+char		*ft_straddc(char *str, char c);
 
 #endif

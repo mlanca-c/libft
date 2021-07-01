@@ -6,7 +6,7 @@
 #    By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/26 00:25:45 by mlanca-c          #+#    #+#              #
-#    Updated: 2021/07/01 11:20:31 by mlanca-c         ###   ########.fr        #
+#    Updated: 2021/07/01 19:35:11 by mlanca-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SRC			=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 				ft_is_negative.c ft_sort_in_tab.c ft_strncat.c \
 				ft_str_isnumeric.c ft_base_check.c ft_isspace.c ft_nbrlen.c \
 				ft_itoa_base.c ft_atoi_base.c ft_swap.c ft_str_isalpha.c \
-				ft_str_toupper.c ft_isint.c ft_strcmp.c \
+				ft_str_toupper.c ft_isint.c ft_strcmp.c ft_putstr_color_fd.c \
+				ft_straddc.c \
 				$(STACK) $(GNL) $(LIST)
 OBJ			=	$(SRC:.c=.o)
 
