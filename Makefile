@@ -6,7 +6,7 @@
 #    By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/26 00:25:45 by mlanca-c          #+#    #+#              #
-#    Updated: 2021/06/02 14:15:37 by mlanca-c         ###   ########.fr        #
+#    Updated: 2021/07/01 11:20:31 by mlanca-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,48 +90,27 @@ _INFO		=	[$(YELLOW)INFO$(RESET)]
 
 all: $(NAME)
 
-m:
-	@printf "$(_INFO) Compiling ./libft ...\n" 
-
-b:
-	@printf "$(_INFO) Compiling list in ./libft/linked_list ...\n"
-
-s:
-	@printf "$(_INFO) Compiling stack in ./libft/stack ...\n"
-
-g:
-	@printf "$(_INFO) Compiling get_next_line in ./libft/get_next_line ...\n"
-
-$(NAME): m $(OBJ) 
+$(NAME): $(OBJ) 
 	@ $(CLIB) $(NAME) $(OBJ) 
-	@printf "$(_SUCCESS) Compilation complete.\n"
 
 list: bonus
-bonus: b clean_no_info $(LIST_O)
+bonus: clean $(LIST_O)
 	@ $(CLIB) $(NAME) $(LIST_O)
-	@printf "$(_SUCCESS) Compilation complete.\n"
 
-stack: s clean_no_info $(STACK_O)
+stack: clean $(STACK_O)
 	@ $(CLIB) $(NAME) $(STACK_O)
-	@printf "$(_SUCCESS) Compilation complete.\n"
 
-get_next_line: g clean_no_info $(GNL_O)
+get_next_line: clean $(GNL_O)
 	@ $(CLIB) $(NAME) $(GNL_O)
-	@printf "$(_SUCCESS) Compilation complete.\n"
-gnl: get_next_line
 
-clean_no_info:
-	@ $(RM) $(OBJ) $(LIST_O) $(STACK_O) $(GNL_O)
-	@ $(RM) $(NAME)
+gnl: get_next_line
 
 clean:
 	@ $(RM) $(OBJ) $(LIST_O) $(STACK_O) $(GNL_O)
-	@printf "$(_INFO) Cleaned all object files\n"
 
 fclean:
 	@ $(RM) $(OBJ) $(LIST_O) $(STACK_O) $(GNL_O)
 	@ $(RM) $(NAME)
-	@printf "$(_INFO) Cleaned all object files an libft.a\n"
 
 re: fclean all
 
