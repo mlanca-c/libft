@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 19:37:30 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/25 18:12:46 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/07/05 18:34:07 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,5 @@ void	ft_lstremove(t_list **lst)
 	temporary = *lst;
 	*lst = temporary->next;
 	temporary->next = NULL;
-	temporary = NULL;
 	free(temporary);
 }
