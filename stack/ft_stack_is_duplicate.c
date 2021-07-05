@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 16:30:46 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/06/28 19:39:58 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/07/05 17:28:28 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ int	ft_stack_is_duplicate(t_stack *stack)
 			return (1);
 		sorted = sorted->next;
 	}
-	free(sorted);
+	ft_stack_clear(&sorted);
 	return (0);
 }
