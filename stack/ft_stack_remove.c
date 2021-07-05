@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 17:19:49 by mlanca-c          #+#    #+#             */
-/*   Updated: 2021/05/18 18:37:20 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2021/07/05 17:26:34 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,5 @@ void	ft_stack_remove(t_stack **stack)
 		*stack = temporary->previous;
 	else
 		*stack = temporary->next;
-	temporary->previous = NULL;
-	temporary->next = NULL;
-	temporary = NULL;
 	free(temporary);
 }
