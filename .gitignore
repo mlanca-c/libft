@@ -1,0 +1,11 @@
+*.o
+*.d
+.vscode
+a.out
+.DS_Store
+bin/
+*.dylib
+*.swiftdoc
+*.swiftmodule
+*.swiftsourceinfo
+README.md
