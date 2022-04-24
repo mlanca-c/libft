@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ctype.h                                         :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 21:41:37 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/24 21:42:12 by mlanca-c         ###   ########.fr       */
+/*   Created: 2022/04/24 22:00:54 by mlanca-c          #+#    #+#             */
+/*   Updated: 2022/04/24 22:06:44 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_CTYPE_H
-# define FT_CTYPE_H
+#include "ft_string.h"
 
-/* C Library - <ctype.h> */
-int	ft_isalnum(int c);
-int	ft_isalpha(int c);
-int	ft_iscntrl(int c);
-int	ft_isdigit(int c);
-int	ft_isgraph(int c);
-int	ft_islower(int c);
-int	ft_isprint(int c);
-int	ft_ispunct(int c);
-int	ft_isspace(int c);
-int	ft_isupper(int c);
-int	ft_isxdigit(int c);
-int	ft_tolower(int c);
-int	ft_toupper(int c);
+/* Copies n characters from src to dest. */
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	size_t	i;
 
-#endif /* FT_CTYPE_H */
+	if (!dest && !src)
+		return (0);
+	i = 0;
+	while (i < n)
+	{
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		i++;
+	}
+	return (dest);
+}

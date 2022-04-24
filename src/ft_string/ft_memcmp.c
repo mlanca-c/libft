@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ctype.h                                         :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 21:41:37 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/24 21:42:12 by mlanca-c         ###   ########.fr       */
+/*   Created: 2022/04/24 21:55:02 by mlanca-c          #+#    #+#             */
+/*   Updated: 2022/04/24 22:02:35 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_CTYPE_H
-# define FT_CTYPE_H
+#include "ft_string.h"
 
-/* C Library - <ctype.h> */
-int	ft_isalnum(int c);
-int	ft_isalpha(int c);
-int	ft_iscntrl(int c);
-int	ft_isdigit(int c);
-int	ft_isgraph(int c);
-int	ft_islower(int c);
-int	ft_isprint(int c);
-int	ft_ispunct(int c);
-int	ft_isspace(int c);
-int	ft_isupper(int c);
-int	ft_isxdigit(int c);
-int	ft_tolower(int c);
-int	ft_toupper(int c);
+/* Compares the first n bytes of str1 and str2. */
+int	ft_memcmp(const void *str1, const void *str2, size_t n)
+{
+	unsigned char	*s1;
+	unsigned char	*s2;
 
-#endif /* FT_CTYPE_H */
+	if (n == 0)
+		return (0);
+	s1 = (unsigned char *)str1;
+	s2 = (unsigned char *)str2;
+	while (*s1 == *s2 && n > 1)
+	{
+		s1++;
+		s2++;
+		n--;
+	}
+	return (*s1 - *s2);
+}

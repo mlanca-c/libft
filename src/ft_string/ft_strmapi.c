@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ctype.h                                         :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 21:41:37 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/24 21:42:12 by mlanca-c         ###   ########.fr       */
+/*   Created: 2022/04/25 00:30:59 by mlanca-c          #+#    #+#             */
+/*   Updated: 2022/04/25 00:32:36 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_CTYPE_H
-# define FT_CTYPE_H
+#include "ft_string.h"
 
-/* C Library - <ctype.h> */
-int	ft_isalnum(int c);
-int	ft_isalpha(int c);
-int	ft_iscntrl(int c);
-int	ft_isdigit(int c);
-int	ft_isgraph(int c);
-int	ft_islower(int c);
-int	ft_isprint(int c);
-int	ft_ispunct(int c);
-int	ft_isspace(int c);
-int	ft_isupper(int c);
-int	ft_isxdigit(int c);
-int	ft_tolower(int c);
-int	ft_toupper(int c);
+char	*ft_strmapi(char const *str, char (*f)(unsigned int, char))
+{
+	char	*map;
+	int		i;
 
-#endif /* FT_CTYPE_H */
+	if (!str || !f)
+		return (NULL);
+	map = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
+	if (!map)
+		return (NULL);
+	i = 0;
+	while (str[i])
+	{
+		map[i] = f(i, str[i]);
+		i++;
+	}
+	map[i] = '\0';
+	return (map);
+}

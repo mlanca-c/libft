@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ctype.h                                         :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 21:41:37 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/24 21:42:12 by mlanca-c         ###   ########.fr       */
+/*   Created: 2022/04/24 23:58:28 by mlanca-c          #+#    #+#             */
+/*   Updated: 2022/04/25 00:00:06 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_CTYPE_H
-# define FT_CTYPE_H
+#include "ft_string.h"
 
-/* C Library - <ctype.h> */
-int	ft_isalnum(int c);
-int	ft_isalpha(int c);
-int	ft_iscntrl(int c);
-int	ft_isdigit(int c);
-int	ft_isgraph(int c);
-int	ft_islower(int c);
-int	ft_isprint(int c);
-int	ft_ispunct(int c);
-int	ft_isspace(int c);
-int	ft_isupper(int c);
-int	ft_isxdigit(int c);
-int	ft_tolower(int c);
-int	ft_toupper(int c);
+/* Searches for the last occurrence of the character c (an unsigned char) in the
+ * string pointed to by the argument str. */
+char	*ft_strrchr(const char *str, int c)
+{
+	size_t	len;
 
-#endif /* FT_CTYPE_H */
+	len = ft_strlen(str);
+	if (c == 0)
+		return ((char *)(str + len));
+	if (!str[0])
+		return (NULL);
+	while (len--)
+	{
+		if (*(str + len) == (char)c)
+			return ((char *)(str + len));
+	}
+	return (NULL);
+}

@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ctype.h                                         :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 21:41:37 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/24 21:42:12 by mlanca-c         ###   ########.fr       */
+/*   Created: 2022/04/24 23:55:01 by mlanca-c          #+#    #+#             */
+/*   Updated: 2022/04/24 23:56:34 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_CTYPE_H
-# define FT_CTYPE_H
+#include "ft_string.h"
 
-/* C Library - <ctype.h> */
-int	ft_isalnum(int c);
-int	ft_isalpha(int c);
-int	ft_iscntrl(int c);
-int	ft_isdigit(int c);
-int	ft_isgraph(int c);
-int	ft_islower(int c);
-int	ft_isprint(int c);
-int	ft_ispunct(int c);
-int	ft_isspace(int c);
-int	ft_isupper(int c);
-int	ft_isxdigit(int c);
-int	ft_tolower(int c);
-int	ft_toupper(int c);
+/* Compares at most the first n bytes of str1 and str2. */
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
+{
+	size_t	i;
 
-#endif /* FT_CTYPE_H */
+	i = 0;
+	while (str1[i] != '\0' && str1[i] == str2[i] && i + 1 < n)
+		i++;
+	if (str1[i] == str2[i] || n == 0)
+		return (0);
+	return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+}

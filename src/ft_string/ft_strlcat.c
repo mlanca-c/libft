@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ctype.h                                         :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 21:41:37 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/24 21:42:12 by mlanca-c         ###   ########.fr       */
+/*   Created: 2022/04/24 23:44:45 by mlanca-c          #+#    #+#             */
+/*   Updated: 2022/04/24 23:49:00 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_CTYPE_H
-# define FT_CTYPE_H
+#include "ft_string.h"
 
-/* C Library - <ctype.h> */
-int	ft_isalnum(int c);
-int	ft_isalpha(int c);
-int	ft_iscntrl(int c);
-int	ft_isdigit(int c);
-int	ft_isgraph(int c);
-int	ft_islower(int c);
-int	ft_isprint(int c);
-int	ft_ispunct(int c);
-int	ft_isspace(int c);
-int	ft_isupper(int c);
-int	ft_isxdigit(int c);
-int	ft_tolower(int c);
-int	ft_toupper(int c);
+/* Appends the string pointed to, by src to the end of the string pointed to by
+ * dest. */
+size_t	ft_strlcat(char *dest, const char *src, size_t n)
+{
+	size_t	i;
+	size_t	j;
 
-#endif /* FT_CTYPE_H */
+	i = 0;
+	while (dest[i] && i < n)
+		i++;
+	j = 0;
+	while (src[j] && (i + j + 1) < n)
+	{
+		dest[i + j] = src[j];
+		j++;
+	}
+	if (i < n)
+		dest[i + j] = '\0';
+	return (i + ft_strlen(src));
+}
