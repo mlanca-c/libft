@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 00:00:36 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/25 00:05:33 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2022/04/25 14:43:24 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ char	*ft_substr(const char *str, unsigned int start, size_t n)
 		return (NULL);
 	if (ft_strlen(str) < start)
 		return (ft_strdup(""));
-	if (ft_strlen(str) < n)
-		substr = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
-	else
+	if (ft_strlen(&str[start]) > n)
 		substr = (char *)malloc((n + 1) * sizeof(char));
+	else
+		substr = (char *)malloc((ft_strlen(&str[start]) + 1) * sizeof(char));
 	if (!substr)
 		return (NULL);
 	i = 0;
