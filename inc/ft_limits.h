@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:04:34 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/25 13:17:22 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2022/04/25 13:24:04 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@
 # define CHAR_MAX		+127 	/* Defines the value for type char and its value
 								 * will be equal to SCHAR_MAX if char represents
 								 * negative values, otherwise UCHAR_MAX. */
-# define MB_LEN_MAX 	16	/* Defines the maximum number of bytes in a multi-byte
-							 * character. */
+# define MB_LEN_MAX 	16	/* Defines the maximum number of bytes in a
+							 * multi-byte character. */
 # define SHRT_MIN		-32768 	/* Defines the minimum value for a short
 								 * int. */
 # define SHRT_MAX		+32767 	/* Defines the maximum value for a short int. */
