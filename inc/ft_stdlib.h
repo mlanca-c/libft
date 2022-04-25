@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 00:40:37 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/25 01:19:18 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2022/04/25 12:58:31 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int			ft_atoi(const char *str);
 long int	ft_atol(const char *str);
 void		*ft_calloc(size_t nitems, size_t size);
 void		*ft_malloc(size_t size);
+void		*ft_exit(int status, void (*f)(void *), void *arg);
 int			ft_abs(int x);
 int			ft_labs(long int x);
 
