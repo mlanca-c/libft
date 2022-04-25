@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 21:41:37 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/24 21:42:12 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2022/04/25 14:09:37 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,8 @@ int	ft_isupper(int c);
 int	ft_isxdigit(int c);
 int	ft_tolower(int c);
 int	ft_toupper(int c);
+
+/* Other string related functions */
+int	ft_isascii(int c);
 
 #endif /* FT_CTYPE_H */
