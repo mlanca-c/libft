@@ -290,7 +290,7 @@ endif
 # Exemple:
 # DIRS := folder1/:folder2/
 # DIRS += folder1/:folder3/:folder4/
-DIRS	:= ft_ctype/:ft_string/:ft_stdlib/:ft_math/
+DIRS	:= ft_ctype/:ft_string/:ft_stdlib/:ft_math/:ft_stdio/
 		   
 
 SRC_DIRS_LIST	:= $(addprefix ${SRC_ROOT},${DIRS})
