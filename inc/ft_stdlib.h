@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 00:40:37 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/25 12:58:31 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2022/04/25 13:17:47 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "ft_ctype.h"
 # include "ft_math.h"
 # include "ft_string.h"
+# include "ft_limits.h"
 
 /* C Library - <stdlib.h> */
 double		ft_atof(const char *str);
