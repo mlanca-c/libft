@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_power.c                                         :+:      :+:    :+:   */
+/*   ft_pmalloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 00:45:01 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/25 01:30:27 by mlanca-c         ###   ########.fr       */
+/*   Created: 2022/04/25 01:03:10 by mlanca-c          #+#    #+#             */
+/*   Updated: 2022/04/25 01:04:28 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_math.h"
+#include "ft_stdlib.h"
 
-/* Returns x raised to the power of y. */
-double	ft_power(double x, double y)
+void	*ft_pmalloc(size_t size, void (*f)(void *), void *arg)
 {
-	double	p;
+	void	*ptr;
 
-	if (y < 0)
-		return (0);
-	p = 1;
-	while (y)
-		ft_power(p *= x, --y);
-	return (p);
+	ptr = malloc(size);
+	if (!ptr)
+		f(arg);
+	return (ptr);
 }

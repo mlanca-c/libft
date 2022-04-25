@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_power.c                                         :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 00:45:01 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/25 01:30:27 by mlanca-c         ###   ########.fr       */
+/*   Created: 2022/04/25 01:19:26 by mlanca-c          #+#    #+#             */
+/*   Updated: 2022/04/25 01:20:21 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_math.h"
-
-/* Returns x raised to the power of y. */
-double	ft_power(double x, double y)
+/* Returns the absolute value of x. */
+int	ft_abs(int x)
 {
-	double	p;
-
-	if (y < 0)
-		return (0);
-	p = 1;
-	while (y)
-		ft_power(p *= x, --y);
-	return (p);
+	if (x < 0)
+		return (-x);
+	return (x);
 }

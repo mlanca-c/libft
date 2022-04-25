@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_power.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 00:45:01 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/25 01:30:27 by mlanca-c         ###   ########.fr       */
+/*   Created: 2022/04/25 00:58:14 by mlanca-c          #+#    #+#             */
+/*   Updated: 2022/04/25 01:00:20 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_math.h"
+#include "ft_stdlib.h"
 
-/* Returns x raised to the power of y. */
-double	ft_power(double x, double y)
+/* Allocates the requested memory and returns a pointer to it. */
+void	*ft_calloc(size_t nitems, size_t size)
 {
-	double	p;
+	char	*str;
 
-	if (y < 0)
-		return (0);
-	p = 1;
-	while (y)
-		ft_power(p *= x, --y);
-	return (p);
+	str = (char *)malloc(size * nitems);
+	if (!str)
+		return (NULL);
+	ft_memset(str, 0, size * nitems);
+	return (str);
 }

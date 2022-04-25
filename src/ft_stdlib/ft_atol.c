@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_power.c                                         :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 00:45:01 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/25 01:30:27 by mlanca-c         ###   ########.fr       */
+/*   Created: 2022/04/25 00:55:03 by mlanca-c          #+#    #+#             */
+/*   Updated: 2022/04/25 00:58:04 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_math.h"
+#include "ft_stdlib.h"
 
-/* Returns x raised to the power of y. */
-double	ft_power(double x, double y)
+/* Converts the string pointed to, by the argument str to a long integer (type
+ * long int). */
+long int	ft_atol(const char *str)
 {
-	double	p;
+	int			i;
+	int			neg;
+	long int	n;
 
-	if (y < 0)
-		return (0);
-	p = 1;
-	while (y)
-		ft_power(p *= x, --y);
-	return (p);
+	i = 0;
+	while (ft_isspace(str[i]))
+		i++;
+	neg = 1;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i++] == '-')
+			neg = -1;
+	}
+	n = 0;
+	while (ft_isdigit(str[i]))
+		n = (n * 10) + (str[i++] - '0');
+	return (n * neg);
 }

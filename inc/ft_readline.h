@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_power.c                                         :+:      :+:    :+:   */
+/*   ft_readline.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 00:45:01 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/25 01:30:27 by mlanca-c         ###   ########.fr       */
+/*   Created: 2022/04/24 21:47:07 by mlanca-c          #+#    #+#             */
+/*   Updated: 2022/04/24 21:47:30 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_math.h"
+#ifndef FT_READLINE_H
+# define FT_READLINE_H
 
-/* Returns x raised to the power of y. */
-double	ft_power(double x, double y)
-{
-	double	p;
-
-	if (y < 0)
-		return (0);
-	p = 1;
-	while (y)
-		ft_power(p *= x, --y);
-	return (p);
-}
+#endif /* FT_READLINE_H */
