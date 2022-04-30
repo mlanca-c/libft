@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_last.c                                      :+:      :+:    :+:   */
+/*   ft_stk_add_front.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/30 13:41:36 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/30 13:42:17 by mlanca-c         ###   ########.fr       */
+/*   Created: 2022/04/30 15:05:41 by mlanca-c          #+#    #+#             */
+/*   Updated: 2022/04/30 15:09:03 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_lst.h"
+#include "ft_ds.h"
 
-t_lst	*ft_lst_last(t_lst *lst)
+void	ft_stk_add_front(t_stk **stk, t_stk *new)
 {
-	if (lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	t_stk	*tmp;
+
+	tmp = *stk;
+	if (tmp)
+	{
+		new->next = tmp;
+		tmp->previous = new;
+	}
+	*stk = new;
 }

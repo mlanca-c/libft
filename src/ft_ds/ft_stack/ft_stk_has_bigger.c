@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_clear.c                                     :+:      :+:    :+:   */
+/*   ft_stk_has_bigger.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/30 13:40:05 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/30 13:51:02 by mlanca-c         ###   ########.fr       */
+/*   Created: 2022/04/30 15:28:53 by mlanca-c          #+#    #+#             */
+/*   Updated: 2022/04/30 15:29:43 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_lst.h"
+#include "ft_ds.h"
 
-void	ft_lst_clear(t_lst **lst, void (*del)(void *))
+int	ft_stk_has_bigger(t_stk *stk, int val)
 {
-	if (!lst)
-		return ;
-	while (lst)
-		ft_lst_remove(lst, del);
+	while (stk)
+	{
+		if (stk->data > val)
+			return (1);
+		stk = stk->next;
+	}
+	return (0);
 }

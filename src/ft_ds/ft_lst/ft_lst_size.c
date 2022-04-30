@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_add_back.c                                  :+:      :+:    :+:   */
+/*   ft_lst_size.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/30 13:35:47 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/30 14:09:27 by mlanca-c         ###   ########.fr       */
+/*   Created: 2022/04/30 13:46:56 by mlanca-c          #+#    #+#             */
+/*   Updated: 2022/04/30 14:30:49 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_lst.h"
+#include "ft_ds.h"
 
-void	ft_lst_add_back(t_lst **lst, t_lst *new)
+int	ft_lst_size(t_lst *lst)
 {
-	t_lst	*last;
+	int	i;
 
-	if (!lst)
-		*lst = new;
-	else
+	i = 0;
+	while (lst)
 	{
-		last = ft_lst_last(*lst);
-		new->previous = last;
-		new->next = new;
+		lst = lst->next;
+		i++;
 	}
+	return (i);
 }

@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_stk_median.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josantos <josantos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/08 10:52:45 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/30 14:23:34 by mlanca-c         ###   ########.fr       */
+/*   Created: 2022/04/30 15:38:28 by mlanca-c          #+#    #+#             */
+/*   Updated: 2022/04/30 15:41:01 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_ds.h"
 
-# include "ft_ctype.h"
-# include "ft_ds.h"
-# include "ft_limits.h"
-# include "ft_math.h"
-# include "ft_readline.h"
-# include "ft_stdio.h"
-# include "ft_stdlib.h"
-# include "ft_string.h"
+int	ft_stk_median(t_stk *stk)
+{
+	int		i;
+	t_stk	*dup;
 
-#endif /* LIBFT_H */
+	i = ft_stk_size(stk) / 2;
+	dup = ft_stk_dup(stk);
+	if (!dup)
+		return (INT_MIN);
+	ft_stk_sort(&dup);
+	if (!dup)
+		return (INT_MIN);
+	return (ft_stk_get(dup, i - 1));
+}

@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:25:02 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/25 13:53:07 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2022/04/30 16:01:35 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_STDIO_H
 
 # include <unistd.h>
+# include <stdarg.h>
 # include "ft_string.h"
 # include "ft_limits.h"
 # include "ft_stdlib.h"
@@ -26,5 +27,6 @@ void	ft_putstr_fd(char *str, int fd);
 void	ft_putendl_fd(char *str, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putnbr_base_fd(unsigned int n, int base, int fd);
+int		ft_printf(const char *fmt, ...);
 
 #endif /* FT_STDIO_H */

@@ -6,11 +6,11 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 13:45:11 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/30 14:09:13 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2022/04/30 14:30:49 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_lst.h"
+#include "ft_ds.h"
 
 void	ft_lst_remove(t_lst **lst, void (*del)(void *))
 {

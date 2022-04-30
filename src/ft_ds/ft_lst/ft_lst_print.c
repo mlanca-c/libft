@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_size.c                                      :+:      :+:    :+:   */
+/*   ft_lst_print.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/30 13:46:56 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/30 14:08:57 by mlanca-c         ###   ########.fr       */
+/*   Created: 2022/04/30 13:43:42 by mlanca-c          #+#    #+#             */
+/*   Updated: 2022/04/30 14:30:49 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_lst.h"
+#include "ft_ds.h"
 
-int	ft_lst_size(t_lst *lst)
-{
-	int	i;
-
-	i = 0;
-	while (lst)
-	{
-		lst = lst->next;
-		i++;
-	}
-	return (i);
-}
+// t_lst	*ft_lst_last(t_lst *lst, char *btw)
+// {
+// 	while (lst)
+// 	{
+// 		if (lst->next)
+// 			ft_printf("%s%s", (char *)lst->content, btw);
+// 		else
+// 			ft_printf("%s", (char *)lst->content);
+// 		lst = lst->next;
+// 	}
+// }

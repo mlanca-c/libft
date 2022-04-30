@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_new.c                                       :+:      :+:    :+:   */
+/*   ft_stk_min.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/30 13:28:46 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/30 13:51:25 by mlanca-c         ###   ########.fr       */
+/*   Created: 2022/04/30 15:41:18 by mlanca-c          #+#    #+#             */
+/*   Updated: 2022/04/30 15:42:28 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_lst.h"
+#include "ft_ds.h"
 
-t_lst	*ft_lst_new(void *content)
+int	ft_stk_min(t_stk *stk)
 {
-	t_lst	*lst;
+	int	min;
 
-	lst = ft_calloc(sizeof(t_lst), 1);
-	if (!lst)
-		return (NULL);
-	lst->content = content;
-	return (lst);
+	if (!stk)
+		return (INT_MIN);
+	min = stk->data;
+	while (stk)
+	{
+		if (stk->data < min)
+			min = stk->data;
+		stk = stk->next;
+	}
+	return (min);
 }

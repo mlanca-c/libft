@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_stk_add_back.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josantos <josantos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/08 10:52:45 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/30 14:23:34 by mlanca-c         ###   ########.fr       */
+/*   Created: 2022/04/30 14:59:10 by mlanca-c          #+#    #+#             */
+/*   Updated: 2022/04/30 15:07:00 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_ds.h"
 
-# include "ft_ctype.h"
-# include "ft_ds.h"
-# include "ft_limits.h"
-# include "ft_math.h"
-# include "ft_readline.h"
-# include "ft_stdio.h"
-# include "ft_stdlib.h"
-# include "ft_string.h"
+void	ft_stk_add_back(t_stk **stk, t_stk *new)
+{
+	t_stk	*last;
 
-#endif /* LIBFT_H */
+	if (!*stk)
+	{
+		*stk = new;
+		return ;
+	}
+	last = ft_stk_last(*stk);
+	new->previous = last;
+	last->next = new;
+}
