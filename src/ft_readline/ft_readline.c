@@ -6,13 +6,14 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 14:48:51 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/25 14:49:42 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2022/04/30 13:19:22 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_readline.h"
 
-char	*ft_readline(const char *line)
+char	*ft_readline(const char *prompt)
 {
-	return (ft_readline_fd(line, STDIN_FILENO));
+	ft_putstr_fd((char *)prompt, STDIN_FILENO);
+	return (ft_readline_fd(STDIN_FILENO));
 }

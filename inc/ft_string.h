@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 21:49:03 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/25 13:03:14 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2022/04/30 13:15:03 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ char	*ft_strrchr(const char *str, int c);
 
 /* Other string related functions */
 void	ft_bzero(void *str, size_t n);
+char	*ft_pstrjoin(char const *str1, char const *str2);
 char	**ft_split(char const *str, char c);
 char	*ft_strdup(const char *str);
 char	*ft_strjoin(char const *str1, char const *str2);

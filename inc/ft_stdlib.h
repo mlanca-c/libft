@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 00:40:37 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/25 13:17:47 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2022/04/30 13:22:53 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ char		*ft_ltoa(long int n);
 char		*ft_itoa_base(int n, int base);
 char		*ft_ltoa_base(long int n, int base);
 void		*ft_pmalloc(size_t size, void (*f)(void *), void *arg);
+void		*ft_pcalloc(size_t size, void (*f)(char *));
 
 #endif /* FT_STDLIB_H */
