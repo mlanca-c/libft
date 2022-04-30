@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lst_last.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josantos <josantos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/08 10:52:45 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/30 13:32:20 by mlanca-c         ###   ########.fr       */
+/*   Created: 2022/04/30 13:41:36 by mlanca-c          #+#    #+#             */
+/*   Updated: 2022/04/30 13:42:17 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_lst.h"
 
-# include "ft_ctype.h"
-# include "ft_limits.h"
-# include "ft_lst.h"
-# include "ft_math.h"
-# include "ft_readline.h"
-# include "ft_stdio.h"
-# include "ft_stdlib.h"
-# include "ft_string.h"
-
-#endif /* LIBFT_H */
+t_lst	*ft_lst_last(t_lst *lst)
+{
+	if (lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
+}
