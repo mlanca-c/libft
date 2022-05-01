@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 13:29:02 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/05/01 13:48:05 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2022/05/01 13:53:25 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,31 +77,5 @@ void	ft_ast_add_right(t_ast **root, t_ast *new);
 void	ft_ast_clear(t_ast *root, void (*del)(void *));
 void	ft_ast_print(t_ast *root, char *msg);
 void	ft_ast_remove(t_ast *root, void (*del)(void *));
-
-/* Double Content Linked List */
-typedef struct s_dlist
-{
-	void			*key;
-	void			*value;
-	struct s_dlist	*next;
-	struct s_dlist	*previous;
-}	t_dlst;
-
-t_dlst	*ft_dlst_new(void *key, void *value);
-void	ft_dlst_add_back(t_dlst **lst, t_dlst *new);
-void	ft_dlst_add_front(t_dlst **lst, t_dlst *new);
-void	ft_dlst_clear(t_dlst *lst, void (*del)(void *));
-void	ft_dlst_remove(t_dlst *lst, void (*del)(void *));
-t_dlst	*ft_dlst_last(t_dlst *lst);
-t_dlst	*ft_dlst_front(t_dlst *lst);
-void	ft_dlst_print(t_dlst *lst, char *msg1, char *msg2);
-void	*ft_dlst_find(t_dlst *lst, void *key);
-void	*ft_dlst_replace(t_dlst *lst, void *key, void *value);
-int		ft_dlst_size(t_dlst *lst);
-char	**ft_dlst_to_arr(t_dlst *lst, char *btw);
-t_dlst	*ft_dlst_copy(t_dlst *lst);
-void	ft_dlst_sort(t_dlst **lst);
-int		ft_dlst_key_exists(t_dlst *lst, char *key);
-void	ft_dlst_remove(t_dlst **lst, void (*del)(void *));
 
 #endif /* FT_DS_H */
