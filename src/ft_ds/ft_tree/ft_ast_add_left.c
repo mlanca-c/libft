@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_print.c                                     :+:      :+:    :+:   */
+/*   ft_ast_add_left.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/30 13:43:42 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/05/01 13:10:39 by mlanca-c         ###   ########.fr       */
+/*   Created: 2022/05/01 12:56:20 by mlanca-c          #+#    #+#             */
+/*   Updated: 2022/05/01 12:59:25 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ds.h"
 
-t_lst	*ft_lst_print(t_lst *lst, char *msg)
+void	ft_ast_add_left(t_ast **root, t_ast *new)
 {
-	if (!lst)
-		return ;
-	ft_printf(msg, root->content);
-	ft_lst_print_rec(root->next, msg);
+	if (!*root)
+		*root = new;
+	else
+		(*root)->left = new;
 }

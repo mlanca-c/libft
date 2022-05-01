@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_print.c                                     :+:      :+:    :+:   */
+/*   ft_ast_new.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/30 13:43:42 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/05/01 13:10:39 by mlanca-c         ###   ########.fr       */
+/*   Created: 2022/05/01 12:53:48 by mlanca-c          #+#    #+#             */
+/*   Updated: 2022/05/01 13:36:31 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ds.h"
 
-t_lst	*ft_lst_print(t_lst *lst, char *msg)
+t_ast	*ft_ast_new(void *content)
 {
-	if (!lst)
-		return ;
-	ft_printf(msg, root->content);
-	ft_lst_print_rec(root->next, msg);
+	t_ast	*tree;
+
+	if (!content)
+		return (NULL);
+	tree = ft_calloc(sizeof(t_ast), 1);
+	if (!tree)
+		return (NULL);
+	tree->content = content;
+	return (tree);
 }

@@ -6,7 +6,7 @@
 /*   By: mlanca-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 13:29:02 by mlanca-c          #+#    #+#             */
-/*   Updated: 2022/04/30 16:11:46 by mlanca-c         ###   ########.fr       */
+/*   Updated: 2022/05/01 13:48:05 by mlanca-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ typedef struct s_list
 	struct s_list	*previous;
 }	t_lst;
 
-t_lst	*ft_lst_new(void *content);
 void	ft_lst_add_back(t_lst **lst, t_lst *new);
 void	ft_lst_add_front(t_lst **lst, t_lst *new);
 void	ft_lst_clear(t_lst **lst, void (*del)(void *));
 t_lst	*ft_lst_last(t_lst *lst);
+t_lst	*ft_lst_new(void *content);
+void	ft_lst_print(t_lst *lst, char *msg);
 void	ft_lst_remove(t_lst **lst, void (*del)(void *));
 int		ft_lst_size(t_lst *lst);
-void	ft_lst_print(t_lst *lst, char *btw);
-char	*ft_lst_tostr(t_lst *list, char *btw);
+char	*ft_lst_tostr(t_lst *lst, char *btw);
 
 /* Stack */
 typedef struct s_stack
@@ -74,34 +74,34 @@ typedef struct s_ast
 t_ast	*ft_ast_new(void *content);
 void	ft_ast_add_left(t_ast **root, t_ast *new);
 void	ft_ast_add_right(t_ast **root, t_ast *new);
-void	ft_ast_delete(t_ast *node, void (*del)(void *));
 void	ft_ast_clear(t_ast *root, void (*del)(void *));
-void	ft_ast_print(t_ast *root);
+void	ft_ast_print(t_ast *root, char *msg);
+void	ft_ast_remove(t_ast *root, void (*del)(void *));
 
 /* Double Content Linked List */
 typedef struct s_dlist
 {
 	void			*key;
-	void			*content;
+	void			*value;
 	struct s_dlist	*next;
 	struct s_dlist	*previous;
 }	t_dlst;
 
-t_dlst	*ft_dict_new(void *key, void *content);
-void	ft_dict_add_back(t_dlst **lst, t_dlst *new);
-void	ft_dict_add_front(t_dlst **lst, t_dlst *new);
-void	ft_dict_clear(t_dlst *lst, void (*del)(void *));
-void	ft_dict_delete(t_dlst *lst, void (*del)(void *));
-t_dlst	*ft_dict_last(t_dlst *lst);
-t_dlst	*ft_dict_front(t_dlst *lst);
-void	ft_dict_print(t_dlst *lst, char *message1, char *message2);
-void	*ft_dict_find(t_dlst *lst, void *key);
-void	*ft_dict_replace(t_dlst *lst, void *key, void *value);
-int		ft_dict_size(t_dlst *lst);
-char	**ft_dict_to_arr(t_dlst *lst, char *delimiter);
-t_dlst	*ft_dict_copy(t_dlst *lst);
-void	ft_dict_sort(t_dlst **lst);
-int		ft_dict_key_exists(t_dlst *lst, char *key);
-void	ft_dict_remove(t_dlst **lst, void (*del)(void *));
+t_dlst	*ft_dlst_new(void *key, void *value);
+void	ft_dlst_add_back(t_dlst **lst, t_dlst *new);
+void	ft_dlst_add_front(t_dlst **lst, t_dlst *new);
+void	ft_dlst_clear(t_dlst *lst, void (*del)(void *));
+void	ft_dlst_remove(t_dlst *lst, void (*del)(void *));
+t_dlst	*ft_dlst_last(t_dlst *lst);
+t_dlst	*ft_dlst_front(t_dlst *lst);
+void	ft_dlst_print(t_dlst *lst, char *msg1, char *msg2);
+void	*ft_dlst_find(t_dlst *lst, void *key);
+void	*ft_dlst_replace(t_dlst *lst, void *key, void *value);
+int		ft_dlst_size(t_dlst *lst);
+char	**ft_dlst_to_arr(t_dlst *lst, char *btw);
+t_dlst	*ft_dlst_copy(t_dlst *lst);
+void	ft_dlst_sort(t_dlst **lst);
+int		ft_dlst_key_exists(t_dlst *lst, char *key);
+void	ft_dlst_remove(t_dlst **lst, void (*del)(void *));
 
 #endif /* FT_DS_H */
